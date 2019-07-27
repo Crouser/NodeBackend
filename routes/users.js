@@ -10,9 +10,11 @@ var router = express.Router();
 router.use(bodyParser.json());
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get(authenticate.verifyAdmin, function(req, res, next) {
+  res.send('users.info');
+  next();
+}
+);
 
 
 router.post('/signup', (req, res, next) => {

@@ -11,7 +11,7 @@ router.use(bodyParser.json());
 
 /* GET users listing. */
 router.get(authenticate.verifyAdmin, function(req, res, next) {
-  res.send('users.info');
+  res.send('users.info');                                                            //  errr
   next();
 }
 );
